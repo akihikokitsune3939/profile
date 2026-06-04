@@ -1,0 +1,12 @@
+body { font-family: Arial, sans-serif; background: #f3f3f3; color: #222; margin: 0; }
+.topbar { background: #ddd; padding: 10px; display: flex; justify-content: space-between; }
+.topbar a { color: #111; margin-right: 10px; text-decoration: none; }
+.container { padding: 16px; max-width: 900px; margin: 0 auto; background: #fff; min-height: 100vh; }
+.form { display: grid; gap: 8px; }
+textarea { min-height: 140px; }
+textarea, input, button { padding: 8px; border: 1px solid #aaa; }
+button { background: #e1e1e1; cursor: pointer; }
+.warn { background: #fff2cc; border: 1px solid #e6c765; padding: 8px; margin-top: 10px; }
+.meter { width: 100%; background: #ddd; height: 14px; border: 1px solid #aaa; }
+.fill { height: 100%; background: #7aa77a; }
+.result-item { border-top: 1px dashed #bbb; margin-top: 10px; padding-top: 8px; }

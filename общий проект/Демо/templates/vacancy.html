@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Demo — Вакансия{% endblock %}
+{% block content %}
+<h1>Проверка вакансии (Demo)</h1>
+<form method="post" enctype="multipart/form-data" class="form">
+  <label>Текст вакансии</label>
+  <textarea name="raw_text"></textarea>
+  <label>Файл (PDF/DOCX)</label>
+  <input type="file" name="vacancy_file" accept=".pdf,.docx" />
+  <label>Ссылка</label>
+  <input type="url" name="vacancy_url" />
+  <button type="submit">Проверить</button>
+</form>
+{% include 'result_block.html' %}
+{% endblock %}

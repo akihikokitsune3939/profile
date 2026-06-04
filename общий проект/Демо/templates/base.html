@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}ЧекРез Demo{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="{{ url_for('index') }}">ЧекРез Demo v0.1</a>
+    <nav>
+      <a href="{{ url_for('resume_page') }}">Резюме</a>
+      <a href="{{ url_for('vacancy_page') }}">Вакансии</a>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

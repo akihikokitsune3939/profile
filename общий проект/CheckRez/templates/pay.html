@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}ЧекРез — Оплата{% endblock %}
+{% block content %}
+<section class="panel">
+  <h1>Оплата подписки</h1>
+  <p>Введите данные карты и выберите тариф. После оплаты лимит проверок снимается на сегодня.</p>
+
+  {% if warning %}
+  <p class="warn-text">{{ warning }}</p>
+  {% endif %}
+
+  <form method="post" class="form">
+    <input type="hidden" name="target" value="{{ target }}" />
+
+    <label>Тариф подписки</label>
+    <select name="plan" required>
+      <option value="day">1 день — 199 ₽</option>
+      <option value="month">1 месяц — 990 ₽</option>
+      <option value="year">1 год — 7990 ₽</option>
+    </select>
+
+    <label>Номер карты</label>
+    <input type="text" name="card_number" placeholder="0000 0000 0000 0000" required />
+
+    <label>Имя держателя карты</label>
+    <input type="text" name="card_name" placeholder="IVAN IVANOV" required />
+
+    <div class="pay-grid">
+      <div>
+        <label>Срок действия (MM/YY)</label>
+        <input type="text" name="exp_date" placeholder="12/28" required />
+      </div>
+      <div>
+        <label>CVV</label>
+        <input type="password" name="cvv" placeholder="123" required />
+      </div>
+    </div>
+
+    <button class="btn" type="submit">Оплатить и снять лимит</button>
+  </form>
+
+  <p class="deep-help">Демо-режим: данные карты не сохраняются и не отправляются в платежный шлюз.</p>
+</section>
+{% endblock %}

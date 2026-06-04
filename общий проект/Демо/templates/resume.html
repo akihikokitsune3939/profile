@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Demo — Резюме{% endblock %}
+{% block content %}
+<h1>Проверка резюме (Demo)</h1>
+<form method="post" enctype="multipart/form-data" class="form">
+  <label>Текст резюме</label>
+  <textarea name="raw_text"></textarea>
+  <label>Файл (PDF/DOCX)</label>
+  <input type="file" name="resume_file" accept=".pdf,.docx" />
+  <label>Ссылка</label>
+  <input type="url" name="resume_url" />
+  <button type="submit">Проверить</button>
+</form>
+{% include 'result_block.html' %}
+{% endblock %}

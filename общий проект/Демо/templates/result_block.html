@@ -1,0 +1,31 @@
+{% if warnings %}
+<div class="warn">
+  <ul>{% for w in warnings %}<li>{{ w }}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+
+{% if score is not none %}
+<h2>Индекс достоверности: {{ score }}/100</h2>
+<div class="meter"><div class="fill" style="width: {{ score }}%"></div></div>
+
+<h3>Плюсы</h3>
+<ul>{% for t in truths %}<li>{{ t }}</li>{% endfor %}</ul>
+<h3>Минусы</h3>
+<ul>{% for d in doubts %}<li>{{ d }}</li>{% endfor %}</ul>
+
+{% if entities %}
+<p>Сущности: {% for e in entities %}{{ e }} {% endfor %}</p>
+{% endif %}
+
+<h3>Источники</h3>
+{% if results %}
+  {% for r in results %}
+    <div class="result-item">
+      <a href="{{ r.link }}" target="_blank">{{ r.title }}</a>
+      <p>{{ r.snippet }}</p>
+    </div>
+  {% endfor %}
+{% else %}
+  <p>Источники не найдены.</p>
+{% endif %}
+{% endif %}
